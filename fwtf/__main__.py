@@ -1,7 +1,11 @@
 from flask import render_template
+from forms.Signin import Signin
 from flask import Flask
+import os
 
 app = Flask(__name__, template_folder='views')
+
+app.secret_key = os.environ['SECRET_KEY']
 
 
 @app.get('/')
@@ -11,7 +15,8 @@ def index():
 
 @app.get('/signin')
 def signin():
-    return render_template('signin.jinja', title="Sign in")
+    form = Signin()
+    return render_template('signin.jinja', title="Sign in", form=form)
 
 
 @app.get('/signup')
