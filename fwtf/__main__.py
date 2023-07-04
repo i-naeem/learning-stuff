@@ -1,3 +1,4 @@
+from flask import render_template
 from flask import Flask
 
 app = Flask(__name__)
@@ -15,7 +16,7 @@ def signup():
 
 @app.get('/')
 def index():
-    return 'Home'
+    return render_template('index.jinja')
 
 
 if __name__ == '__main__':
