@@ -1,24 +1,11 @@
-import sqlite3
-import json
+from pprint import pprint
+from db import create_db
 
-connection = sqlite3.connect(':memory:')
-cursor = connection.cursor()
 
-cursor.execute(
-    """CREATE TABLE users(
-        first_name text,
-        user_name text,
-        last_name text,
-        user_id text,
-        email text,
-        gender text
-    )
-    """
-)
+con, cu = create_db(':memory:')
 
-# Populating database with fake users.
-with open(file='fake_users.json', mode='r', encoding='utf-8') as _file:
-    cursor.executemany(
-        'INSERT INTO users(user_id, user_name, first_name, last_name, email, gender) VALUES (:user_id, :user_name, :first_name, :last_name, :email, :gender)', json.load(_file))
+query = cu.execute(
+    'SELECT user_name FROM users WHERE gender = "Male" AND user_id  > 5')
 
-    connection.commit()
+
+pprint(query.fetchone())
