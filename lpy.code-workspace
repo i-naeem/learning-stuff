@@ -1,14 +1,16 @@
 {
   "folders": [
-	{
-		"path": "."
-	},
-	{
-		"path": "fwtf"
-	},
-	{
-		"path": "psql"
-	}
-],
-  "settings": {}
+    {
+      "path": "."
+    },
+    {
+      "path": "fwtf"
+    },
+    {
+      "path": "psql"
+    }
+  ],
+  "settings": {
+    "cSpell.words": ["signin"]
+  }
 }
