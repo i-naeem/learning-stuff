@@ -9,16 +9,24 @@
     <section>
       {{ form.username.label }}
       {{ form.username(placeholder="Enter your username") }}
+      <div>
+        {% if form.username.errors %}
+        {% for error in form.name.errors %}
+        <small>{{ error }}</small>
+        {% endfor %}
+
+        {% endif %}
+      </div>
     </section>
 
     <section>
-      <label for="password">Password</label>
-      <input type="text" name="password" id="password" placeholder="enter your password" />
+      {{ form.password.label }}
+      {{ form.password(placeholder="Enter your password") }}
     </section>
 
-    <section>
-      <button type="submit">Sign in</button>
-    </section>
+    <div>
+      {{ form.submit()}}
+    </div>
   </form>
 </main>
 

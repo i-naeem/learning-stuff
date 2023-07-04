@@ -3,6 +3,13 @@
 {% block content %}
 
 <main>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for message in messages %}
+  <p class="flash-message">{{ message }}</p>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
   <h1>Learning Flask WTForms</h1>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione vel pariatur eius voluptatibus sequi numquam
