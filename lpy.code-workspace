@@ -1,0 +1,14 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "fwtf"
+	},
+	{
+		"path": "psql"
+	}
+],
+  "settings": {}
+}
