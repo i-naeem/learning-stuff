@@ -4,25 +4,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learning flask-wtf</title>
+  <title> {{ title }} - Learning flask-wtf</title>
+  <style>
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .content {
+      flex-grow: 1;
+      width: 100%
+    }
+
+    header {
+      display: flex;
+      margin-bottom: 28px;
+      justify-content: space-between;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+
+    nav ul li {
+      padding: 5px
+    }
+
+    form>section {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    form>section>label {
+      text-transform: capitalize;
+      font-weight: bold;
+      flex-basis: 25.33%;
+    }
+
+    input,
+    label {
+      padding: 5px;
+      font-size: 18px;
+    }
+
+    form>section>input {
+      flex-grow: 1;
+      max-width: 40ch;
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <h3>Learning Flask WTForms</h3>
-    <nav>
-      <ul>
-        <li><a href="{{ url_for('index') }}">Home</a></li>
-        <li><a href="{{ url_for('signup') }}">Sign up</a></li>
-        <li><a href="{{ url_for('signin') }}">Sign in</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="app">
+    <header>
+      <h3>Learning Flask WTForms</h3>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('signup') }}">Sign up</a></li>
+          <li><a href="{{ url_for('signin') }}">Sign in</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="content">
+      {% block content %}
 
-  {% block content %}
-
-  {% endblock content %}
-
+      {% endblock content %}
+    </div>
+  </div>
 </body>
 
 </html>
