@@ -1,5 +1,6 @@
 import './index.css';
 import React from 'react';
+import App from './routes/App';
 import Root, { loader as rootLoader, action as rootAction } from './routes/root.jsx';
 import ReactDOM from 'react-dom/client';
 import ErrorPage from './error-page.jsx';
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     action: rootAction,
     errorElement: <ErrorPage />,
     children: [
+      { index: true, element: <App /> },
       { path: '/contacts/:contactId', loader: contactLoader, element: <Contact /> },
       {
         action: editAction,
