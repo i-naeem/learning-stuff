@@ -44,7 +44,12 @@ export default function Root() {
               type='search'
               name='q'
               className={searching ? 'loading' : ''}
-              onChange={event => submit(event.currentTarget.form)}
+              onChange={event => {
+                const isFirstSearch = q == null;
+                submit(event.currentTarget.form, {
+                  replace: !isFirstSearch,
+                });
+              }}
               defaultValue={q}
             />
             <div id='search-spinner' aria-hidden hidden={!searching} />
