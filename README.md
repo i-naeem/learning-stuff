@@ -1,1 +1,3 @@
-# Learning Python
+# Learning
+
+> Learning and practicing stuff.
