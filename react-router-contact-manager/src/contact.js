@@ -1,6 +1,6 @@
+import sortBy from 'sort-by';
 import localforage from 'localforage';
 import { matchSorter } from 'match-sorter';
-import sortBy from 'sort-by';
 
 export async function getContacts(query) {
   await fakeNetwork(`getContacts:${query}`);
@@ -15,7 +15,7 @@ export async function getContacts(query) {
 export async function createContact() {
   await fakeNetwork();
   let id = Math.random().toString(36).substring(2, 9);
-  let contact = { id, createdAt: Date.now() };
+  let contact = { id, createdAt: Date.now(), avatar: `https://robohash.org/${id}` };
   let contacts = await getContacts();
   contacts.unshift(contact);
   await set(contacts);
