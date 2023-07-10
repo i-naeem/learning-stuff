@@ -6,6 +6,7 @@ import ErrorPage from './error-page.jsx';
 import Contact, { loader as contactLoader } from './routes/contact';
 import EditContact, { action as editAction } from './routes/edit';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { action as destroyAction } from './routes/destroy';
 
 const router = createBrowserRouter([
   {
@@ -17,10 +18,14 @@ const router = createBrowserRouter([
     children: [
       { path: '/contacts/:contactId', loader: contactLoader, element: <Contact /> },
       {
-        path: '/contacts/:contactId/edit',
         action: editAction,
         loader: contactLoader,
         element: <EditContact />,
+        path: '/contacts/:contactId/edit',
+      },
+      {
+        path: 'contacts/:contactId/destroy',
+        action: destroyAction,
       },
     ],
   },
