@@ -7,39 +7,34 @@
 
   <form action="{{ url_for('signup') }}" method="POST">
     <section>
-      <label for="first_name">First Name</label>
-      <input type="text" name="first_name" id="first_name" placeholder="enter your first_name" />
-    </section>
+      {{form.first_name.label}}
+      {{form.first_name()}}
 
-    <section>
-      <label for="last_name">Last Name</label>
-      <input type="text" name="last_name" id="last_name" placeholder="enter your last_name" />
+      {% if form.first_name.errors %}
+      {% for error in form.first_name.errors %}
+      <p>{{error}}</p>
+      {% endfor %}
+      {% endif %}
     </section>
-
     <section>
-      <label for="username">Username</label>
-      <input type="text" name="username" id="username" placeholder="enter your username" />
+      {{form.last_name.label}}
+      {{form.last_name()}}
     </section>
-
     <section>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" placeholder="enter your email" />
+      {{form.email.label}}
+      {{form.email()}}
     </section>
-
     <section>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" placeholder="enter your password" />
+      {{form.password.label}}
+      {{form.password()}}
     </section>
-
     <section>
-      <label for="confirm-password">Confirm Password</label>
-      <input type="confirm-password" name="confirm-password" id="confirm-password"
-        placeholder="enter your confirm-password" />
+      {{form.confirm_password.label}}
+      {{form.confirm_password()}}
     </section>
-
-    <section>
-      <button type="submit">Sign up</button>
-    </section>
+    <div>
+      {{form.submit()}}
+    </div>
   </form>
 </main>
 

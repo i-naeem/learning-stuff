@@ -1,5 +1,6 @@
 from flask import render_template
 from forms.Signin import Signin
+from forms.Signup import Signup
 from flask import redirect
 from flask import url_for
 from flask import flash
@@ -26,9 +27,13 @@ def signin():
     return render_template('signin.jinja', title="Sign in", form=form)
 
 
-@app.get('/signup')
+@app.route('/signup', methods=["GET", "POST"])
 def signup():
-    return render_template('signup.jinja', title="Sign up")
+    form = Signup()
+
+    if form.validate_on_submit():
+        return redirect(url_for('index'))
+    return render_template('signup.jinja', title="Sign up", form=form)
 
 
 if __name__ == '__main__':
