@@ -23,6 +23,7 @@ const router = createBrowserRouter([
         loader: contactLoader,
         action: contactAction,
         element: <Contact />,
+        errorElement: <ErrorPage />,
       },
       {
         action: editAction,
