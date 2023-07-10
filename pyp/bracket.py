@@ -1,4 +1,4 @@
-import string
+print(__name__)
 
 
 def say(text: str) -> None:
