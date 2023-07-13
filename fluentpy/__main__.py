@@ -25,4 +25,6 @@ class FrenchDeck:
 
 
 deck = FrenchDeck()
-print(random.choice(deck))
+
+for card in sorted(deck, key=lambda card: card.suit):
+    print(card)
