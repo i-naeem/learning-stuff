@@ -1,6 +1,10 @@
-import collections
+from typing import NamedTuple
+import random
 
-Card = collections.namedtuple('Card', ['rank', 'suit'])
+
+class Card(NamedTuple):
+    rank: int
+    suit: str
 
 
 class FrenchDeck:
@@ -8,11 +12,10 @@ class FrenchDeck:
     suits = 'spades diamonds clubs hearts'.split()
 
     def __init__(self):
-        self._cards = [
-            Card(rank, suit)
-            for suit in self.suits
-            for rank in self.ranks
-        ]
+        self._cards = []
+        for suit in self.suits:
+            for rank in self.ranks:
+                self._cards.append(Card(rank, suit))
 
     def __len__(self):
         return len(self._cards)
@@ -22,4 +25,4 @@ class FrenchDeck:
 
 
 deck = FrenchDeck()
-print(deck[0])
+print(random.choice(deck))
