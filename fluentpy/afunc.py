@@ -1,7 +1,13 @@
+from operator import methodcaller, mul
+from functools import partial
+
+
+range_from_5 = partial(range, 5)
+print(range_from_5(20))
+exit()
+
+
 # Positional Arguments Only Function
-from operator import methodcaller
-
-
 def positional_only(a, b, /, c=1):
     print(a, b, c)
 
