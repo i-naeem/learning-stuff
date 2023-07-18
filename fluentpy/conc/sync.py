@@ -13,7 +13,7 @@ def download_all_sites(sites):
             download_url(site, session)
 
 
-if __name__ == "__main__":
+def main():
     sites = [
         "https://www.jython.org",
         "http://olympus.realpython.org/dice",
