@@ -3,8 +3,8 @@ import time
 
 
 async def do_work(task_no):
-    print('Doing', task_no, 'Task')
     await asyncio.sleep(1)
+    print('Doing', task_no, 'Task')
 
 
 async def main():
