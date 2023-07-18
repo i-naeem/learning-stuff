@@ -1,4 +1,4 @@
-from concurrent.futures.thread import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 import threading
 import requests
 import time
@@ -15,10 +15,11 @@ def get_session():
 
 
 def download_site(url):
-    with thread_local.session.get(url) as response:
+    session = get_session()
+    with session.get(url) as response:
         print(f'Read {len(response.content)} from {url}')
 
 
 def download_all_sites(sites):
-    with ThreadPoolExecutor(max_workers=5) as executer:
-        executer.map(download_site, sites)
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        executor.map(download_site, sites)
