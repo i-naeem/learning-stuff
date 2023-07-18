@@ -13,7 +13,7 @@ def set_global_session():
 def download_site(url):
     with session.get(url) as response:
         pn = multiprocessing.current_process().name
-        print(f'{pn}: Read {len(response)} from {url}')
+        print(f'{pn}: Read {len(response.content)} from {url}')
 
 
 def download_all_sites(sites):

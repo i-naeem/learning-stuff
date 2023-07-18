@@ -4,7 +4,11 @@ import time
 import sync
 import thread
 
-mode = sys.argv[1]
+mode = None
+try:
+    mode = sys.argv[1]
+except IndexError:
+    pass
 
 SITES = [
     "https://www.jython.org",
@@ -21,6 +25,9 @@ elif mode == 'm':  # Multiprocessing Version
     mlp.download_all_sites(SITES)
 elif mode == 'a':  # Async Version
     pass
+
+else:
+    print('No Mode Selected')
 
 
 duration = time.perf_counter() - start_time
