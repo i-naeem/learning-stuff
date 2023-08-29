@@ -3,5 +3,5 @@
     "editor.defaultFormatter": "ms-python.autopep8"
   },
   "python.formatting.provider": "none",
-  "cSpell.words": ["executemany", "JQKA", "Pcparts", "scrapy", "signin"]
+  "cSpell.words": ["executemany", "getpid", "JQKA", "Pcparts", "scrapy", "signin"]
 }
