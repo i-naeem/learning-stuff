@@ -1,4 +1,7 @@
-from m1 import CONSTANT
+from tkinter import Label
 
+label = Label(None, text='Hello World')
 
-print(CONSTANT)
+label.pack()
+
+label.mainloop()
