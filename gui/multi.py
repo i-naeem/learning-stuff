@@ -2,6 +2,7 @@ from tkinter import Tk
 from tkinter import Frame
 from tkinter import Label
 from tkinter import Button
+from tkinter.constants import LEFT, RIGHT, BOTH, TOP
 
 app = Tk()
 app.title = "Adding Multiple Widget"
@@ -17,10 +18,10 @@ greet = "Hello, Friend!"
 greeting_btn = Button(container, text="Greet me", command=lambda: print(greet))
 quit_btn = Button(container, text="Quit", command=app.quit)
 
-label.pack(side="top", fill="both",)
-greeting_btn.pack(side="left")
-quit_btn.pack(side="right")
+label.pack(side=TOP, fill=BOTH)
+greeting_btn.pack(side=LEFT)
+quit_btn.pack(side=RIGHT)
 
 
-container.pack(fill="both", expand=True)
+container.pack(fill=BOTH, expand=True)
 app.mainloop()
