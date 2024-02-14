@@ -1,0 +1,1 @@
+https://upalerts-4a943.firebaseapp.com/__/auth/action?mode=verifyEmail&oobCode=tDTU-iBz6JDdWZ1CkahiRhAh0h6b_u38eFP5KyER2msAAAGNY5mJMg&apiKey=AIzaSyA9OhZPo7VNgM4A2XsikIJdV_4Dp5mll6w&lang=en
